@@ -1,0 +1,1 @@
+export const images={like_image:require('./like.png'),}
