@@ -1,14 +1,19 @@
-import React from 'react';
-import {View, StyleSheet, Text, SafeAreaView} from 'react-native';
+import { View, Text } from 'react-native'
+import React from 'react'
+import navigationStrings from '../../constants/navigationStrings'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import Background from '../../components/background'
 
-const HomeScreen = () => {
-    return (
-        <SafeAreaView>
-            <Text>HomeScreen</Text>
-        </SafeAreaView>
-    );
+const HomeScreen = ({navigation}) => {
+  return (
+    <View>
+      <TouchableOpacity onPress={() => navigation.navigate(navigationStrings.SIGNUP_EMAIL) }>
+         <Text>Homescreen</Text>
+         </TouchableOpacity>
+
+         <Background/>
+    </View>
+  )
 }
 
-const styles = StyleSheet.create({})
-
-export default HomeScreen;
+export default HomeScreen

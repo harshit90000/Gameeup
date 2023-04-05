@@ -1,14 +1,12 @@
-import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import { View, Text } from 'react-native'
+import React from 'react'
 
 const ScoreBoard = () => {
-    return (
-        <SafeAreaView>
-        <Text>ScoreBoard</Text>
-    </SafeAreaView>
-    );
+  return (
+    <View>
+      <Text>ScoreBoard</Text>
+    </View>
+  )
 }
 
-const styles = StyleSheet.create({})
-
-export default ScoreBoard;
+export default ScoreBoard

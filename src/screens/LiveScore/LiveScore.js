@@ -1,14 +1,12 @@
-import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import { View, Text } from 'react-native'
+import React from 'react'
 
 const LiveScore = () => {
-    return (
-        <SafeAreaView>
-        <Text>LiveScore</Text>
-    </SafeAreaView>
-    );
+  return (
+    <View>
+      <Text>LiveScore</Text>
+    </View>
+  )
 }
 
-const styles = StyleSheet.create({})
-
-export default LiveScore;
+export default LiveScore

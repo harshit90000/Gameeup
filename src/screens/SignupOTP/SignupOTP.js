@@ -1,10 +1,13 @@
-import { View, Text } from 'react-native'
+import { View, Text,TouchableOpacity } from 'react-native'
 import React from 'react'
+import navigationStrings from '../../constants/navigationStrings'
 
-const SignupOTP = () => {
+const SignupOTP = ({navigation}) => {
   return (
     <View>
-      <Text>SignupOTP</Text>
+<TouchableOpacity onPress={() => navigation.navigate(navigationStrings.HOME_SCREEN) }>
+         <Text>SignupOtp</Text>
+         </TouchableOpacity>
     </View>
   )
 }
