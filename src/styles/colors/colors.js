@@ -6,5 +6,5 @@ export default {
     neonGreen : '#beff7e',
     peacockBlue : '#00a8c5',
 
-    
+    //Sarthi
 }
