@@ -10,6 +10,8 @@ export default function AuthStack() {
             <Stack.Navigator screenOptions={{headerShown : true}}>
                 <Stack.Screen name={navigationStrings.SIGNUP_EMAIL} component={SignupEmail} />
                 <Stack.Screen name={navigationStrings.SIGNUP_OTP} component={SignupOTP} />
+                <Stack.Screen name={navigationStrings.ONBOARDING} component={OnBoarding} />
+
             </Stack.Navigator>
     )
 }
