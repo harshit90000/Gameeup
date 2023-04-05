@@ -5,4 +5,5 @@ export default {
     placeHolderColor : '#979797',
     neonGreen : '#beff7e',
     peacockBlue : '#00a8c5'
+    // 
 }
