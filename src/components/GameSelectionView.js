@@ -1,18 +1,20 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { add, minus } from '..';
+
 import { moderateScale, scale } from 'react-native-size-matters';
+import {images} from '../constants/imagePath';
+import colors from '../assets/styles/colors/colors';
 
 const GameSelectionView = ({ label }) => {
     return (
         <LinearGradient
-            colors={['#473B6D', '#80d4ff']}
+            colors={[colors.linearButtonColor1, colors.linearButtonColor2]}
             style={style.selectView} >
             <View style={style.selectBaseView}>
-                <Image style={style.selectImageView} source={add} />
+                <Image style={style.selectImageView} source={images.iconPlus} />
                 <Text style={style.selectTextView}>{label}</Text>
-                <Image style={style.selectImageView} source={minus} />
+                <Image style={style.selectImageView} source={images.iconMinus} />
             </View>
         </LinearGradient>
     );
@@ -24,7 +26,7 @@ const style = StyleSheet.create({
         height: moderateScale(40),
         marginVertical: scale(10),
         borderRadius: scale(20),
-        shadowColor: '#FF0000',
+        shadowColor: colors.solidRed,
         shadowRadius: scale(1),
         elevation: scale(20),
         borderWidth: scale(0.2),
@@ -43,7 +45,7 @@ const style = StyleSheet.create({
     selectTextView:{
         fontSize: scale(20),
          fontWeight: "400",
-          color: "white"
+          color: colors.solidWhite
     }
 })
 export default GameSelectionView;

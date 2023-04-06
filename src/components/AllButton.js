@@ -2,11 +2,12 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { StyleSheet, Text } from 'react-native';
 import { moderateScale, moderateVerticalScale, scale, verticalScale } from 'react-native-size-matters';
+import colors from '../assets/styles/colors/colors';
 
 const AllButton = ({ label }) => {
     return (
         <LinearGradient
-            colors={['#473B6D', '#80d4ff']}
+            colors={[colors.linearButtonColor1, colors.linearButtonColor2]}
             style={styles.linearData} >
             <Text style={styles.label}>{label}</Text>
         </LinearGradient>
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
         height: verticalScale(50),
         marginVertical: moderateVerticalScale(10),
         borderRadius: scale(50),
-        shadowColor: '#FF0000',
+        shadowColor: colors.solidRed,
         shadowRadius: scale(1),
         elevation: scale(20),
         borderWidth: scale(0.2),
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     label: {
         fontSize: scale(25),
         fontWeight: "400",
-        color: "white"
+        color: colors.solidWhite
     }
 })
 export default AllButton;

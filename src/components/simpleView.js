@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 import { moderateScale, scale } from 'react-native-size-matters';
+import colors from '../assets/styles/colors/colors';
 
 const SimpleView = ({ image, label, innerStyle = {} }) => {
     return (
@@ -14,8 +15,8 @@ const styles = StyleSheet.create({
     menuView: {
         flexDirection: "row",
         padding: scale(10),
-        backgroundColor: "white",
-        borderColor: "#027CC8",
+        backgroundColor: colors.solidWhite,
+        borderColor: colors.borderColor,
         borderWidth: scale(1),
         // justifyContent:"center",
         alignItems:"center",
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     },
     menuText: {
         fontSize: scale(13),
-        color: "black",
+        color: colors.solidBlack,
         marginLeft:scale(10),
         fontWeight: "600",
     }

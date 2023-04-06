@@ -2,11 +2,12 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { scale } from 'react-native-size-matters';
+import colors from '../assets/styles/colors/colors';
 
 const SmallButton = () => {
     return (
         <LinearGradient
-            colors={['#473B6D', '#80d4ff']}
+            colors={[colors.linearButtonColor1, colors.linearButtonColor2]}
             style={styles.onBoardingButtonView} >
             <Text style={styles.onBoardingButtonText}>NEXT</Text>
         </LinearGradient>
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
         height: scale(50),
         marginVertical: scale(10),
         borderRadius: scale(50),
-        shadowColor: '#FF0000',
+        shadowColor: colors.solidWhite,
         shadowRadius: scale(50),
         elevation: scale(20),
         borderWidth: scale(0.2),
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     onBoardingButtonText: {
         fontSize: scale(25),
         fontWeight: "700",
-        color: "white"
+        color: colors.solidWhite
     }
 })
 export default SmallButton

@@ -2,11 +2,12 @@ import React from 'react';
 import { StyleSheet, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { moderateScale, moderateVerticalScale, scale, verticalScale } from 'react-native-size-matters';
+import colors from '../assets/styles/colors/colors';
 
 const LooserPay = () => {
     return (
         <LinearGradient
-        colors={['#473B6D', '#80d4ff']}
+        colors={[colors.linearButtonColor1, colors.linearBackGroundColor2]}
         style={styles.linearData} >
         <Text style={styles.label}>Losser's Pay</Text>
     </LinearGradient>
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
         height: scale(40),
         marginVertical: moderateVerticalScale(10),
         borderRadius: scale(50),
-        shadowColor: '#FF0000',
+        shadowColor: colors.solidRed,
         shadowRadius: scale(1),
         elevation: scale(3),
         borderWidth: scale(0.2),
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     label: {
         fontSize: scale(15),
         fontWeight: "400",
-        color: "white"
+        color: colors.solidWhite
     }
 })
 export default LooserPay;

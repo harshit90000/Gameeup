@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { scale } from 'react-native-size-matters';
+import colors from '../assets/styles/colors/colors';
 
-const DownloadButton = ({ button }) => {
-    const [seletedvalue, setselectValue] = useState(0)
+const DayButton = ({ button }) => {
+    const [selectedValue, setSelectedValue] = useState(0)
 
     const handleData = (item, id) => {
-        setselectValue(id)
+        setSelectedValue(id)
     }
     return (
         <View style={styles.buttonView}>
@@ -16,8 +17,8 @@ const DownloadButton = ({ button }) => {
                         <TouchableOpacity
                             onPress={(item) => handleData(item, index)}
                             key={index}
-                            style={[index === seletedvalue ? styles.buttonActive : styles.button]}>
-                            <Text style={[styles.textViewData,[index === seletedvalue ? styles.todayText : styles.todayTextActive]]}>
+                            style={[index === selectedValue ? styles.buttonActive : styles.button]}>
+                            <Text style={[styles.textViewData,[index === selectedValue ? styles.todayText : styles.todayTextActive]]}>
                                 {buttonLabel}</Text>
                         </TouchableOpacity>
                     )
@@ -37,10 +38,10 @@ const styles = StyleSheet.create({
         height: scale(40),
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#288FCF",
+        backgroundColor: colors.solidWhite,
         borderWidth: 0.5,
         borderRadius:scale(20),
-        borderColor: "black",
+        borderColor: colors.solidBlack,
         marginHorizontal:scale(10)
     },
     buttonActive: {
@@ -48,17 +49,17 @@ const styles = StyleSheet.create({
         height: scale(40),
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "white",
+        backgroundColor: colors.skyBlue,
         borderWidth: 0.5,
-        borderColor: "black",
+        borderColor: colors.solidBlack,
         borderRadius:scale(20),
         marginHorizontal:scale(10)
     },
     todayText: {
-        color: "black"
+        color: colors.solidWhite
     },
     todayTextActive: {
-        color: "white"
+        color: colors.solidBlack
     },
     textViewData:{
         fontSize:scale(15),
@@ -66,4 +67,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default DownloadButton;
+export default DayButton;

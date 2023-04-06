@@ -1,28 +1,34 @@
-import React from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { heart, human } from '..';
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters';
+import {images} from '../constants/imagePath';
+import colors from '../assets/styles/colors/colors';
 
-const Card = ({ images, title, location, label, imageFavourite }) => {
+const Card = ({ mainImages, title, location, label }) => {
+    const [selectedValue, setSelectedValue] = useState(true)
+    let imagePaths = selectedValue ? images.iconEmptyHeart : images.iconFilledHeart
+    let changeImage = () => setSelectedValue(previousState => !previousState);
     return (
-        <Pressable style={styles.placeView}>
-            <Image style={styles.placeImage} source={images} />
+        <TouchableOpacity style={styles.placeView}>
+            <Image style={styles.placeImage} source={mainImages} />
             <View style={styles.placeBaseView}>
                 <Text style={styles.placeName}>{title}</Text>
                 <Text style={styles.placeLocation}>{location}</Text>
                 <View style={styles.placeSelectView}>
-                    <LinearGradient
-                        colors={['#473B6D', '#80d4ff']}
-                        style={styles.placeButtonView} >
-                        <Text style={styles.placeButtonTextView}>{label}</Text>
-                    </LinearGradient>
-                    {/* <TouchableOpacity> */}
-                    <Image style={styles.placeFavourite} source={heart} />
-                    {/* </TouchableOpacity> */}
+                    <TouchableOpacity>
+                        <LinearGradient
+                            colors={[colors.linearButtonColor1, colors.linearButtonColor2]}
+                            style={styles.placeButtonView} >
+                            <Text style={styles.placeButtonTextView}>{label}</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => changeImage()}>
+                            <Image style={styles.placeFavorite} source={imagePaths} />
+                    </TouchableOpacity>
                 </View>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     );
 }
 const styles = StyleSheet.create({
@@ -31,7 +37,7 @@ const styles = StyleSheet.create({
         marginHorizontal: scale(16),
         height: moderateVerticalScale(150),
         flexDirection: "row",
-        backgroundColor: "white"
+        backgroundColor: colors.solidWhite
     },
     placeImage: {
         width: scale(130),
@@ -46,7 +52,7 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
     placeName: {
-        color: "black",
+        color: colors.solidBlack,
         fontWeight: "bold",
         width: scale(150),
         fontSize: scale(15)
@@ -54,7 +60,7 @@ const styles = StyleSheet.create({
     placeLocation: {
         marginTop: scale(5),
         width: scale(150),
-        color: "black",
+        color: colors.solidBlack,
         fontWeight: "400",
         fontSize: scale(10)
     },
@@ -66,7 +72,7 @@ const styles = StyleSheet.create({
         width: moderateScale(100),
         borderRadius: 30,
         padding: scale(10),
-        shadowColor: '#FF0000',
+        shadowColor: colors.solidRed,
         shadowRadius: scale(1),
         elevation: scale(2),
         borderWidth: scale(0.2),
@@ -77,9 +83,9 @@ const styles = StyleSheet.create({
     placeButtonTextView: {
         fontSize: scale(13),
         fontWeight: "500",
-        color: "white"
+        color: colors.solidWhite
     },
-    placeFavourite:{
+    placeFavorite: {
         width: scale(30),
         height: scale(30),
         resizeMode: "stretch",

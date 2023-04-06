@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TextInput, Text, Image } from 'react-native';
 import { scale } from 'react-native-size-matters';
+import colors from '../assets/styles/colors/colors';
 
 const MyProfileTextInput = ({
     placeHolder,
@@ -13,9 +14,7 @@ const MyProfileTextInput = ({
             <Image source={imageIcon} style={styles.mainImageIcon} />
             <TextInput
                 placeholder={placeHolder}
-                activeUnderlineColor="yellow"
-                underlineColor="red"
-                placeholderTextColor={"#979797"}
+                placeholderTextColor={colors.placeHolderColor}
                 style={styles.textInputView}
                 {...props}
             />
@@ -26,8 +25,8 @@ const MyProfileTextInput = ({
 const styles = StyleSheet.create({
     mainProfileView: {
         flexDirection: "row",
-        backgroundColor: "#ffffff",
-        borderColor: "#027CC8",
+        backgroundColor: colors.solidWhite,
+        borderColor: colors.borderColor,
         borderWidth: scale(1),
         borderRadius: scale(10),
         padding:scale(10),

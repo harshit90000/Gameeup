@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TextInput, Text } from 'react-native';
 import { scale } from 'react-native-size-matters';
+import colors from '../assets/styles/colors/colors';
 
 const TextInputData = ({
     placeHolder,
@@ -10,7 +11,7 @@ const TextInputData = ({
     return (
         <TextInput
             placeholder={placeHolder}
-            placeholderTextColor={"#979797"}
+            placeholderTextColor={colors.placeHolderColor}
             style={styles.textInputView}
             {...props}
         />
@@ -19,8 +20,8 @@ const TextInputData = ({
 const styles = StyleSheet.create({
     textInputView:{
         fontSize: scale(12),
-        backgroundColor: "#ffffff",
-        borderColor: "#027CC8",
+        backgroundColor: colors.solidWhite,
+        borderColor: colors.borderColor,
         borderWidth: scale(1),
         padding: scale(10),
         borderRadius:scale(10),
