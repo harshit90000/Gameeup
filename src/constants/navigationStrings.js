@@ -1,4 +1,5 @@
 export default {
+    SPLASH_SCREEN:"SplashScreen",
     ONBOARDING : "OnBoarding",
     // Auth Stack Screens
     SIGNUP_EMAIL : "SignupEmail",

@@ -18,7 +18,7 @@ const MyProfileTextInput = ({
                 style={styles.textInputView}
                 {...props}
             />
-            <Image source={imageIcon} style={styles.selectImageIcon} />
+            
         </View>
     );
 }

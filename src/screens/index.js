@@ -1,3 +1,4 @@
+export {default as SplashScreen} from './SplashScreen/SplashScreen'
 export {default as OnBoarding} from './OnBoarding/OnBoarding'
 
 // Auth Stack Screens
