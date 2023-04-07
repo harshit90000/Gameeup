@@ -34,5 +34,4 @@ const MenuScreen = ({ navigation }) => {
     </View>
   )
 }
-
 export default MenuScreen
