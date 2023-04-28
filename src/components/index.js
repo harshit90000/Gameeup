@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import colors from "../assets/styles/colors/colors";
+import colors from "../assets/colors/colors";
 import { scale } from "react-native-size-matters";
 const CustomText = ({ text }) => {
   return (

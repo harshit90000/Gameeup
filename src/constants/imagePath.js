@@ -148,7 +148,7 @@ import payAdd from  '../assets/images/payment/add.png'
 //splashScreen
 import splashFullLogo from  '../assets/images/splashScreen/fullLogo.png'
 import splashStick from  '../assets/images/splashScreen/stick.png'
-
+import LogoGame from '../assets/images/splashScreen/logoApp.png'
 export const images ={backgroundImage,
     bottomHeart,
     bottomHome,
@@ -186,4 +186,5 @@ export const images ={backgroundImage,
     payAdd,
     splashFullLogo,
     splashStick,
+    LogoGame
 }

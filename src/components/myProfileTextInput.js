@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TextInput, Text, Image } from 'react-native';
 import { scale } from 'react-native-size-matters';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 
 const MyProfileTextInput = ({
     placeHolder,

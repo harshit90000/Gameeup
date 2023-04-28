@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 import { scale } from "react-native-size-matters"
-import colors from "../../assets/styles/colors/colors"
+import colors from "../../assets/colors/colors"
 
 const styles = StyleSheet.create({
     termsText:{

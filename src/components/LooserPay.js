@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { moderateScale, moderateVerticalScale, scale, verticalScale } from 'react-native-size-matters';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 
 const LooserPay = () => {
     return (
