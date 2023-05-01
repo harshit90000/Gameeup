@@ -9,7 +9,6 @@ import colors from '../../assets/colors/colors';
 import navigationStrings from '../../constants/navigationStrings';
 import { scale } from 'react-native-size-matters';
 import Paginator from '../../components/Paginator';
-import NextButton from '../../components/NextButton';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const OnBoarding = () => {
@@ -57,7 +56,7 @@ const OnBoarding = () => {
       start={{ x: 0, y: 0 }} end={{ x: 1, y: 1.2 }} >
       <SafeAreaView style={styles.mainView}>
         <Image source={images.LogoGame} style={styles.appLogo} />
-        <Onboarding
+        {/* <Onboarding
           onSkip={() => navigation.replace(navigationStrings.SIGNUP_EMAIL)}
           onDone={() => navigation.replace(navigationStrings.SIGNUP_EMAIL)}
           pages={[
@@ -76,8 +75,8 @@ const OnBoarding = () => {
 
             },
           ]}
-        />
-        {/* <FlatList
+        /> */}
+        <FlatList
           showsHorizontalScrollIndicator={false}
           horizontal
           pagingEnabled
@@ -100,10 +99,10 @@ const OnBoarding = () => {
               </View>
             </View>
           } />
-        <Paginator data={Data} scrollX={scrollX} />  */}
-      
-      {/* <NextButton scrollTo={scrollTo} percentages={(currentIndex + 1) * (100 / Data.length)} /> */}
+        <Paginator data={Data} scrollX={scrollX} />  
       </SafeAreaView>
+
+      
     </LinearGradient>
 
   );

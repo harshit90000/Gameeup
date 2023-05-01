@@ -6,24 +6,27 @@ const { height, width } = Dimensions.get('window')
 const styles = StyleSheet.create({
     mainView:{
         justifyContent:"center",
-        alignContent:"center",
-        // alignItems:"center"
-        flex:1
+        // alignContent:"center",
+        alignItems:"center",
+        // flex:1
     },
     appLogo:{
         alignSelf:"center",
+        marginTop:scale(50)
     },
     flatScreen:{
+        marginTop:scale(-50),
         justifyContent:"center",
         alignItems:"center",
         // backgroundColor:"white",
         height:scale(450),
-        width:scale(300)
+        width:width
     },
     onBoardingImages: {
-        resizeMode: "stretch",
-        height:scale(300),
+        resizeMode: "contain",
+        height:scale(240),
         // width:width,
+        alignSelf:"center",
         width:scale(260)
     },
     featuresText: {
