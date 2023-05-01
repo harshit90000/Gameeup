@@ -13,7 +13,7 @@ import LooserPay from './LooserPay';
 
 import LinearGradient from 'react-native-linear-gradient';
 import{ images } from '../constants/imagePath';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 import DayButton from './DayButton';
 
 const Background = () => {

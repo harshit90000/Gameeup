@@ -5,7 +5,7 @@ import { images } from '../constants/imagePath';
 import { scale } from 'react-native-size-matters';
 import navigationStrings from '../constants/navigationStrings';
 import { FavoriteScreen, HomeScreen, LiveScore, MenuScreen, ScoreBoard } from '../screens';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 const Tab = createBottomTabNavigator();
 
 const BottomStack = () => {

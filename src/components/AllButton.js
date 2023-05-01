@@ -2,7 +2,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { StyleSheet, Text } from 'react-native';
 import { moderateScale, moderateVerticalScale, scale, verticalScale } from 'react-native-size-matters';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 
 const AllButton = ({ label }) => {
     return (
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         borderRadius: scale(50),
         shadowColor: colors.solidRed,
         shadowRadius: scale(1),
-        elevation: scale(20),
+        elevation: scale(1),
         borderWidth: scale(0.2),
         justifyContent: "center",
         alignItems: "center"

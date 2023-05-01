@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters';
 import {images} from '../constants/imagePath';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 
 const Card = ({ mainImages, title, location, label }) => {
     const [selectedValue, setSelectedValue] = useState(true)

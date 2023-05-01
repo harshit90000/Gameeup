@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 
 import { moderateScale, scale } from 'react-native-size-matters';
 import {images} from '../constants/imagePath';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 
 const GameSelectionView = ({ label }) => {
     return (

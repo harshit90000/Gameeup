@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 import { moderateScale, scale } from 'react-native-size-matters';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 
 const SimpleView = ({ image, label, innerStyle = {} }) => {
     return (

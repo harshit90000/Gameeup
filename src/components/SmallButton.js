@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { scale } from 'react-native-size-matters';
-import colors from '../assets/styles/colors/colors';
+import colors from '../assets/colors/colors';
 
 const SmallButton = () => {
     return (
