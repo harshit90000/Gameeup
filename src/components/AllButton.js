@@ -6,7 +6,6 @@ import colors from '../assets/colors/colors';
 const AllButton = ({ label ,innerStyle = {}, onPress}) => {
     return (
         <TouchableOpacity
-            // colors={[colors.linearButtonColor1, colors.linearButtonColor2]}
             style={[styles.linearData,innerStyle]}
             onPress={() => {
                 onPress();
@@ -17,22 +16,17 @@ const AllButton = ({ label ,innerStyle = {}, onPress}) => {
 }
 const styles = StyleSheet.create({
     linearData: {
-        width: scale(100),
         alignSelf: "center",
-        height: verticalScale(50),
         marginVertical: moderateVerticalScale(10),
         borderRadius: scale(50),
-        backgroundColor: colors.linearButtonColor1,
-        shadowColor: colors.solidRed,
-        shadowRadius: scale(1),
-        elevation: scale(1),
-        justifyContent: "center",
-        alignItems: "center"
+        backgroundColor: '#fff',
+        justifyContent: 'center', 
+        alignItems:"center" 
     },
     label: {
-        fontSize: scale(25),
-        fontWeight: "400",
-        color: colors.solidWhite
+        fontSize: scale(15),
+        fontWeight: "bold",
+        color: colors.solidBlack
     }
 })
 export default AllButton;

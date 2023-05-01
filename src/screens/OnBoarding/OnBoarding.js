@@ -35,7 +35,7 @@ const OnBoarding = () => {
   const ref = useRef();
   const { width, height } = Dimensions.get('window');
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
- 
+
   const Slide = ({ item }) => {
     return (
       <View style={styles.flatScreen}>
@@ -45,7 +45,7 @@ const OnBoarding = () => {
       </View>
     );
   };
- const updateCurrentSlideIndex = e => {
+  const updateCurrentSlideIndex = e => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
     const currentIndex = Math.round(contentOffsetX / width);
     setCurrentSlideIndex(currentIndex);
@@ -66,93 +66,42 @@ const OnBoarding = () => {
   };
   const Footer = () => {
     return (
-      <View
-        style={{
-          height: height * 0.25,
-          justifyContent: 'space-between',
-          paddingHorizontal: 20,
-        }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            marginTop: 20,
-          }}>
+      <View style={[styles.footerView,{height:height*0.20}]}>
+        <View  style={styles.lineView}>
           {slides.map((_, index) => (
             <View
               key={index}
               style={[
                 styles.indicator,
                 currentSlideIndex == index && {
-                  backgroundColor: colors.solidBlack,
-                  width: 25,
+                  backgroundColor: colors.skyBlue,
+                  width: scale(25),
                 },
               ]}
             />
           ))}
         </View>
-        <View style={{ marginBottom: 20 }}>
+        <View style={styles.buttonView}>
           {currentSlideIndex == slides.length - 1 ? (
-            <View style={{ height: 50 }}>
-              <TouchableOpacity
-                style={styles.btn}
-                onPress={() => navigation.replace('HomeScreen')}>
-                <Text style={{ fontWeight: 'bold', fontSize: 15 }}>
-                  GET STARTED
-                </Text>
-              </TouchableOpacity>
-            </View>
+            <AllButton label="GET STARTED" innerStyle={styles.startedButton} onPress={() => navigation.replace('HomeScreen')} />
           ) : (
-            <View style={{ flexDirection: 'row' }}>
-              <TouchableOpacity
-                activeOpacity={0.8}
-                style={[
-                  styles.btn,
-                  {
-                    borderColor: colors.white,
-                    borderWidth: 1,
-                    backgroundColor: 'transparent',
-                  },
-                ]}
-                onPress={skip}>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: 15,
-                    color: colors.white,
-                  }}>
-                  SKIP
-                </Text>
-              </TouchableOpacity>
-              <View style={{ width: 15 }} />
-              <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={goToNextSlide}
-                style={styles.btn}>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: 15,
-                  }}>
-                  NEXT
-                </Text>
-              </TouchableOpacity>
+            <View style={styles.buttonView}>
+              <AllButton label="SKIP" onPress={skip} innerStyle={styles.skipButton} />
+              <AllButton label="NEXT" onPress={goToNextSlide} innerStyle={styles.nextButton} />
             </View>
           )}
         </View>
       </View>
     );
   };
-
   return (
     <LinearGradient
       colors={[colors.linearBackGroundColor1, colors.linearBackGroundColor2]}
       style={{ flex: 1 }}
       start={{ x: 0, y: 0 }} end={{ x: 1, y: 1.2 }} >
-        
       <SafeAreaView style={styles.mainView}>
-      <Image source={images.LogoGame} style={styles.appLogo} />
-         {/* <Onboarding
+        <Image source={images.LogoGame} style={styles.appLogo} />
+        {/* <Onboarding
           onSkip={() => .replace(navigationStrings.SIGNUP_EMAIL)}
           onDone={() => navigation.replace(navigationStrings.SIGNUP_EMAIL)}
           pages={[
@@ -178,7 +127,6 @@ const OnBoarding = () => {
           ref={ref}
           showsHorizontalScrollIndicator={false}
           onMomentumScrollEnd={updateCurrentSlideIndex}
-          // contentContainerStyle={{height: height * 0.75}}
           horizontal
           data={slides}
           pagingEnabled
@@ -187,7 +135,6 @@ const OnBoarding = () => {
         <Footer />
       </SafeAreaView>
     </LinearGradient>
-
   );
 }
 export default OnBoarding

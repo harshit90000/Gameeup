@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, Image, TextInput, ScrollView, Platform, Modal, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import navigationStrings from '../../constants/navigationStrings'
 import { images } from '../../constants/imagePath'
@@ -6,10 +6,27 @@ import styles from './styles'
 import colors from '../../assets/colors/colors'
 import AllButton from '../../components/AllButton'
 import CustomText from '../../components'
-import DatePicker from 'react-native-datepicker';
+import DatePicker from 'react-native-datepicker'
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const MyProfile = ({ navigation }) => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("Select Date")
+  const showDatePicker = () => {
+    setDate(true);
+  };
+  const hideDatePicker = () => {
+    setDate(false);
+  };
+  const handleConfirm = (date) => {
+    // console.warn("A date has been picked: ", date);
+    const dt = new Date(date)
+    const x = dt.toISOString().split('T')
+    const x1 = x[0].split("-")
+    console.log(x1[2] + "/" + x1[1] + '/' + x1[0])
+    setSelectedDate(x1[2] + "/" + x1[1] + '/' + x1[0])
+    hideDatePicker();
+  };
   return (
     <ScrollView>
       <Image source={images.boardingHuman} style={styles.myProfileImages} />
@@ -53,34 +70,42 @@ const MyProfile = ({ navigation }) => {
         />
       </View>
       <CustomText text={"BirthDate"} />
-      <View style={styles.mainProfileView}>
+      <TouchableOpacity style={styles.mainProfileView} onPress={showDatePicker}>
         <Image source={images.myDate} style={styles.mainImageIcon} />
-        <TextInput
-          placeholder={"BirthDate"}
-          placeholderTextColor={colors.placeHolderColor}
-          style={styles.textInputView}
-        />
-      </View>
-      <View style={styles.mainProfileView}>
-        <Image source={images.myDate} style={styles.mainImageIcon} />
-        <DatePicker
-          style={styles.datePickerStyle}
+        <Text style={styles.dobDate}>{selectedDate}</Text>
+      </TouchableOpacity>
+      <DateTimePickerModal
+        isVisible={date}
+        mode="date"
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
+        maximumDate={new Date()}
+      />
+
+      {/* <DatePicker
+          style={{ width: 200 }}
           date={date}
           mode="date"
-          placeholder="BirthDate"
-          placeholderTextColor={colors.placeHolderColor}
-          format="DD-MM-YYYY"
-          // minDate="01-01-1958"
-          // maxDate={new Date()}
+          placeholder="select date"
+          format="YYYY-MM-DD"
+          minDate="2016-05-01"
+          maxDate="2016-06-01"
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
-          useNativeDriver = {true}
-          showIcon={false}
-          onDateChange={(date) => {
-            setDate(date);
+          customStyles={{
+            dateIcon: {
+              position: 'absolute',
+              left: 0,
+              top: 4,
+              marginLeft: 0
+            },
+            dateInput: {
+              marginLeft: 36
+            }
           }}
-        />
-      </View>
+          onDateChange={(date) => { this.setState({ date: date }) }}
+        /> */}
+
       <CustomText text={"City"} />
       <View style={styles.mainProfileView}>
         <Image source={images.myCity} style={styles.mainImageIcon} />
@@ -91,7 +116,7 @@ const MyProfile = ({ navigation }) => {
         />
       </View>
       <TouchableOpacity onPress={() => navigation.navigate(navigationStrings.MENU_SCREEN)}>
-        <AllButton label={"Save Changes"} />
+        <AllButton innerStyle={styles.saveData} label={"Save Changes"} />
       </TouchableOpacity>
     </ScrollView>
   )
