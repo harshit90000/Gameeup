@@ -56,7 +56,7 @@ const OnBoarding = () => {
       start={{ x: 0, y: 0 }} end={{ x: 1, y: 1.2 }} >
       <SafeAreaView style={styles.mainView}>
         <Image source={images.LogoGame} style={styles.appLogo} />
-        {/* <Onboarding
+        <Onboarding
           onSkip={() => navigation.replace(navigationStrings.SIGNUP_EMAIL)}
           onDone={() => navigation.replace(navigationStrings.SIGNUP_EMAIL)}
           pages={[
@@ -75,8 +75,8 @@ const OnBoarding = () => {
 
             },
           ]}
-        /> */}
-        <FlatList
+        />
+        {/* <FlatList
           showsHorizontalScrollIndicator={false}
           horizontal
           pagingEnabled
@@ -92,14 +92,14 @@ const OnBoarding = () => {
           renderItem=
           {({ item }) =>
             <View style={styles.flatScreen}>
-              <View>
+       
                 <Image source={item.image} style={styles.onBoardingImages} />
                 <Text style={styles.featuresText}>{item.title}</Text>
                 <Text style={styles.featuresText}>{item.subtitle}</Text>
-              </View>
+         
             </View>
           } />
-        <Paginator data={Data} scrollX={scrollX} />  
+        <Paginator data={Data} scrollX={scrollX} />   */}
       </SafeAreaView>
 
       

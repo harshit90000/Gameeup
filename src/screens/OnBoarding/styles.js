@@ -6,13 +6,13 @@ const { height, width } = Dimensions.get('window')
 const styles = StyleSheet.create({
     mainView:{
         justifyContent:"center",
-        // alignContent:"center",
-        alignItems:"center",
-        // flex:1
+        alignContent:"center",
+        // alignItems:"center",
+        flex:1
     },
     appLogo:{
         alignSelf:"center",
-        marginTop:scale(50)
+        // marginTop:scale(50)
     },
     flatScreen:{
         marginTop:scale(-50),
