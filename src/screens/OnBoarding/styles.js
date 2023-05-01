@@ -1,18 +1,18 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { scale } from "react-native-size-matters";
+import { moderateVerticalScale, scale, verticalScale } from "react-native-size-matters";
 import colors from "../../assets/colors/colors";
 const { height, width } = Dimensions.get('window')  
 
 const styles = StyleSheet.create({
     mainView:{
-        justifyContent:"center",
-        alignContent:"center",
+        // justifyContent:"center",
+        // alignContent:"center",
         // alignItems:"center",
         flex:1
     },
     appLogo:{
         alignSelf:"center",
-        // marginTop:scale(50)
+        marginTop:scale(50)
     },
     flatScreen:{
         marginTop:scale(-50),
@@ -36,23 +36,34 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginVertical: scale(1),
     },
-    getStartedView: {
-        height: 48,
-        width: 261,
-        backgroundColor: colors.solidBlue,
-        borderRadius: 48,
-        display: "flex",
-        padding: 15,
-        alignSelf: "center",
-        bottom:"5%"
-    },
-    getStartedText: {
+    subtitle: {
         color: colors.solidWhite,
-        fontSize: 16,
-        fontWeight: "500",
-        alignItems: "center",
-        textAlign: "center"
-    }
-
+        fontSize: 13,
+        marginTop: 10,
+        maxWidth: '70%',
+        textAlign: 'center',
+        lineHeight: 23,
+      },
+      title: {
+        color: colors.solidWhite,
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginTop: 20,
+        textAlign: 'center',
+      },
+      image: {
+        height: '100%',
+        width: '100%',
+        resizeMode: 'contain',
+      },
+      btn: {
+        flex: 1,
+        height: 50,
+        borderRadius: 5,
+        backgroundColor: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+   
 })
 export default styles
