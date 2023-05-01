@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         borderWidth: scale(1),
         padding: scale(10),
         borderRadius:scale(10),
-        marginHorizontal:scale(17)
+        // marginHorizontal:scale(17)
     }
 })
 export default TextInputData;

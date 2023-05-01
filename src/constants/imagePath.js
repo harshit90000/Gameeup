@@ -114,6 +114,7 @@ import bottomSlideShow from  '../assets/images/bottom/slideshow.png'
 //homeScreen
 import iconPlus from  '../assets/images/homeScreen/plus.png'
 import iconMinus from  '../assets/images/homeScreen/minus.png'
+import iconSearch from '../assets/images/homeScreen/search.png'
 import iconDownArrow from  '../assets/images/homeScreen/downArrow.png'
 import iconLeftArrow from  '../assets/images/homeScreen/leftArrow.png'
 import iconRightArrow from  '../assets/images/homeScreen/rightArrow.png'
@@ -155,6 +156,7 @@ export const images ={backgroundImage,
     bottomMenu,
     bottomScoreboard,
     bottomSlideShow,
+    iconSearch,
     iconPlus,
     iconMinus,
     iconDownArrow,

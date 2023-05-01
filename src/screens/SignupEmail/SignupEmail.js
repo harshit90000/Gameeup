@@ -1,19 +1,40 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, SafeAreaView } from 'react-native'
 import React from 'react'
 import navigationStrings from '../../constants/navigationStrings'
-import {images} from '../../constants/imagePath'
+import { images } from '../../constants/imagePath'
+import styles from './styles'
+import colors from '../../assets/colors/colors'
+import LinearGradient from 'react-native-linear-gradient'
+import SmallButton from '../../components/SmallButton'
+import TextInputData from '../../components/SigninTextInputLabel'
 
-const SignupEmail = ({navigation}) => {
+
+const SignupEmail = ({ navigation }) => {
   return (
-    <View >
-      {/* <Text>SignupEmail</Text> */}
-      <TouchableOpacity onPress={() => navigation.navigate(navigationStrings.SIGNUP_OTP) }>
-         <Text>SignupEmail</Text>
-         </TouchableOpacity>
-         <Image source={images.myProfile}
-        //  style={{height:30, width:30}}
+    <LinearGradient
+      colors={[colors.linearBackGroundColor1, colors.linearBackGroundColor2]}
+      style={{ flex: 1 }}
+      start={{ x: 0, y: 0 }} end={{ x: 1, y: 1.2 }} >
+      <SafeAreaView style={styles.mainView}>
+
+        <Text style={styles.headingText1}>Enter Your Email Address</Text>
+        <Text style={styles.headingText2}>We Will Send a confirmation code to your email.</Text>
+        
+        <TextInputData 
+          placeHolder={'Email Address'} 
           />
-    </View>
+
+        <TouchableOpacity style={styles.nextButton} 
+        // onPress={()=>navigation.replace('SignupOTP')}
+        >
+          <SmallButton />
+        </TouchableOpacity>
+
+        
+        <Image source={images.LogoGame} style={styles.appLogo} />
+        
+      </SafeAreaView>
+    </LinearGradient>
   )
 }
 
