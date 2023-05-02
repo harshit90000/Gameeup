@@ -186,5 +186,5 @@ export const images ={backgroundImage,
     payAdd,
     splashFullLogo,
     splashStick,
-    LogoGame
+    LogoGame,
 }

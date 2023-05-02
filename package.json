@@ -10,7 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^7.0.1",
     "@react-native-masked-view/masked-view": "^0.2.9",
+    "@react-native-picker/picker": "^2.4.10",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
@@ -24,8 +26,10 @@
     "react-native": "^0.71.6",
     "react-native-datepicker": "^1.7.2",
     "react-native-gesture-handler": "^2.9.0",
+    "react-native-image-crop-picker": "^0.39.0",
     "react-native-image-slider-show": "^1.0.3",
     "react-native-linear-gradient": "^2.6.2",
+    "react-native-modal-datetime-picker": "^15.0.0",
     "react-native-onboarding-swiper": "^1.2.0",
     "react-native-ratings": "^8.1.0",
     "react-native-responsive-screen": "^1.4.2",
@@ -45,6 +49,7 @@
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^29.2.1",
     "@types/react": "^18.0.24",
+    "@types/react-native-datepicker": "^1.7.1",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.2.1",
     "eslint": "^8.19.0",
