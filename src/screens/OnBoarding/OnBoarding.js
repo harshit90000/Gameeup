@@ -83,7 +83,7 @@ const OnBoarding = () => {
         </View>
         <View style={styles.buttonView}>
           {currentSlideIndex == slides.length - 1 ? (
-            <AllButton label="GET STARTED" innerStyle={styles.startedButton} onPress={() => navigation.replace('HomeScreen')} />
+            <AllButton label="GET STARTED" innerStyle={styles.startedButton} onPress={() => navigation.replace(navigationStrings.SIGNUP_EMAIL)} />
           ) : (
             <View style={styles.buttonView}>
               <AllButton label="SKIP" onPress={skip} innerStyle={styles.skipButton} />
