@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     textInputView: {
         fontSize: scale(13),
-        width: scale(250),
+        width: scale(230),
         height: scale(35),
         marginLeft: scale(10)
     },
@@ -79,6 +79,12 @@ const styles = StyleSheet.create({
         marginBottom: scale(30),
         borderWidth: 1,
         borderColor: colors.solidBlack
+    },
+    imageStyle:{
+        height:scale(30),
+        width:scale(30),
+        alignSelf:"flex-end",
+        resizeMode:"stretch",
     }
 })
 export default styles

@@ -31,11 +31,7 @@ const Background = () => {
                         label={"My Profile"}
                         innerStyle={{ marginVertical: 10 }} />
                     <AllButton label={"Submit"} />
-                    <Card
-                        label={"Book Now"}
-                        mainImages={images.myProfile}
-                        title={"I am Sarthi Raval.I like Racing"}
-                        location={"I am Sarthi Raval.I like Racing"} />
+                   
                     <GameSelectionView label={1} />
                     <MyProfileTextInput
                         imageIcon={images.myProfile}

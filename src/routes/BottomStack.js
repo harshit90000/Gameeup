@@ -20,6 +20,7 @@ const BottomStack = () => {
                 name={navigationStrings.HOME_SCREEN}
                 component={HomeScreen}
                 options={{
+                    headerShown:false,
                     headerTitle:"Home",
                     headerTintColor:colors.borderColor,
                     headerTitleStyle:{marginLeft:scale(40),fontSize:scale(20)},

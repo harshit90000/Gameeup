@@ -5,12 +5,10 @@ import { images } from '../../constants/imagePath'
 import styles from './styles'
 import colors from '../../assets/colors/colors'
 import LinearGradient from 'react-native-linear-gradient'
-import SmallButton from '../../components/SmallButton'
-import TextInputData from '../../components/SigninTextInputLabel'
 import AllButton from '../../components/AllButton'
 import OtpInput from '../../components/OtpInput'
 
-const SignupOTP = ({ navigation }) => {
+const SignupOTP = ({ navigation, route }) => {
 
   const [codeArr, setCodeArr] = useState([])
   const [number, setNumber] = useState()
@@ -29,25 +27,19 @@ const SignupOTP = ({ navigation }) => {
       style={{ flex: 1 }}
       start={{ x: 0, y: 0 }} end={{ x: 1, y: 1.2 }} >
       <SafeAreaView style={styles.mainView}>
-
         <Text style={styles.headingText1}>Welcome</Text>
-        <Text style={styles.headingText2}>We sent a 4-digit code to</Text>
-
+        <View style={{ flexDirection: "row" }}>
+          <Text style={styles.headingText2}>We sent a 4-digit code to :-</Text>
+          <Text style={styles.headingText2}> {route.params.paramKey.toLowerCase()}
+          </Text>
+        </View>
         <OtpInput
           onChangeText={(e, index) => handleCode(e, index)}
           value={codeArr}
           noOfInput={4}
         />
-
-        <TouchableOpacity style={styles.nextButton}
-        // onPress={()=>navigation.replace('SignupOTP')}
-        >
-          <AllButton label={'SUBMIT'} innerStyle={styles.buttonSignUp} onPress={() => navigation.replace(navigationStrings.HOME_SCREEN)} />
-        </TouchableOpacity>
-
-
+        <AllButton label={'SUBMIT'} innerStyle={styles.buttonSignUp} onPress={() => navigation.replace(navigationStrings.HOME_SCREEN)} />
         <Image source={images.LogoGame} style={styles.appLogo} />
-
       </SafeAreaView>
     </LinearGradient>
   )

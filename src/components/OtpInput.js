@@ -6,31 +6,25 @@ import { scale } from 'react-native-size-matters';
 export default OtpInput = ({  onChangeText, value = [], noOfInput=4, backgroundColor }) => {
 
     const pins = []
-
     for ( let i = 0; i < noOfInput; i++){
         pins[i] = i;
     }
-
     const nextInput = (e, index) => {
-
         if (e == "" && index > 0 ) {
             pins[index-1].focus()
             return
         }
-
         if (e != "" && index < noOfInput-1 ){
             pins[index+1].focus()
         }
     }
-
     return(
         <View style={styles.input}>
             {
                 pins.map( ( blank , index) => (
                     <View
                         key= {index} 
-                        style={[styles.box, {backgroundColor : backgroundColor || solidWhite}] } 
-                    >
+                        style={[styles.box, {backgroundColor : backgroundColor || solidWhite}] }   >
                         <TextInput 
                             style={styles.inputBox}
                             onChangeText={e => {
@@ -50,7 +44,6 @@ export default OtpInput = ({  onChangeText, value = [], noOfInput=4, backgroundC
         </View>
     
 )}
-
 const styles = StyleSheet.create({
     input:{
         alignItems: "center",

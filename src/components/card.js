@@ -1,47 +1,51 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters';
-import {images} from '../constants/imagePath';
+import { images } from '../constants/imagePath';
 import colors from '../assets/colors/colors';
+import navigationStrings from '../constants/navigationStrings';
 
-const Card = ({ mainImages, title, location, label }) => {
+const Card = ({ mainImages, title, location}) => {
     const [selectedValue, setSelectedValue] = useState(true)
     let imagePaths = selectedValue ? images.iconEmptyHeart : images.iconFilledHeart
     let changeImage = () => setSelectedValue(previousState => !previousState);
     return (
-        <TouchableOpacity style={styles.placeView}>
-            <Image style={styles.placeImage} source={mainImages} />
+        <View style={styles.placeView}>
+            <Image style={styles.placeImage} source={{ uri: mainImages }} />
             <View style={styles.placeBaseView}>
                 <Text style={styles.placeName}>{title}</Text>
                 <Text style={styles.placeLocation}>{location}</Text>
                 <View style={styles.placeSelectView}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate(navigationStrings.VENUE_SCREEN)
+                    }}>
                         <LinearGradient
                             colors={[colors.linearButtonColor1, colors.linearButtonColor2]}
                             style={styles.placeButtonView} >
-                            <Text style={styles.placeButtonTextView}>{label}</Text>
+                            <Text style={styles.placeButtonTextView}>Get In</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => changeImage()}>
-                            <Image style={styles.placeFavorite} source={imagePaths} />
+                        <Image style={styles.placeFavorite} source={imagePaths} />
                     </TouchableOpacity>
                 </View>
             </View>
-        </TouchableOpacity>
+        </View>
     );
 }
 const styles = StyleSheet.create({
     placeView: {
         borderRadius: scale(16),
-        marginHorizontal: scale(16),
-        height: moderateVerticalScale(150),
+        marginHorizontal: scale(5),
+        height: moderateVerticalScale(130),
         flexDirection: "row",
-        backgroundColor: colors.solidWhite
+        backgroundColor: colors.solidWhite,
+        marginBottom: scale(8)
     },
     placeImage: {
         width: scale(130),
-        height: moderateVerticalScale(150),
+        height: moderateVerticalScale(130),
         borderBottomLeftRadius: scale(16),
         borderTopLeftRadius: scale(16),
         resizeMode: "stretch"

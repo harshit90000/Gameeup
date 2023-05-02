@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         marginBottom: scale(30)
     },
     buttonSignUp:{
-        paddingHorizontal: scale(20),
+        paddingHorizontal: scale(30),
         paddingVertical:scale(20)
     }
     
