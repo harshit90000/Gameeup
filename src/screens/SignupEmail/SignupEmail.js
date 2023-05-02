@@ -15,7 +15,7 @@ const SignupEmail = ({ navigation }) => {
       colors={[colors.linearBackGroundColor1, colors.linearBackGroundColor2]}
       style={{ flex: 1 }}
       start={{ x: 0, y: 0 }} end={{ x: 1, y: 1.2 }} >
-      <SafeAreaView style={styles.mainView}>
+      <View style={styles.mainView}>
 
         <Text style={styles.headingText1}>Enter Your Email Address</Text>
         <Text style={styles.headingText2}>We Will Send a confirmation code to your email.</Text>
@@ -33,7 +33,7 @@ const SignupEmail = ({ navigation }) => {
         
         <Image source={images.LogoGame} style={styles.appLogo} />
         
-      </SafeAreaView>
+      </View>
     </LinearGradient>
   )
 }
