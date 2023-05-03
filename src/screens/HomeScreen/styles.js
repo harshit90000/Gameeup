@@ -47,19 +47,24 @@ const styles = StyleSheet.create({
         height: scale(20),
         width: scale(20)
     },
-    searchIcon: {
-        height: scale(20),
-        width: scale(20),
-        marginEnd: scale(15),
-    },
     searchInputView: {
         fontSize: scale(12),
         borderColor: colors.borderColor,
         borderWidth: scale(1),
-        padding: scale(10),
+        alignItems:"center",
+        height:scale(50),
         borderRadius: scale(20),
         flexDirection: 'row',
         marginHorizontal: scale(15),
+    },
+    searchIcon: {
+        height: scale(20),
+        width: scale(20),
+        marginHorizontal: scale(10),
+        // alignSelf:"center"
+    },
+    searchPlaces:{
+        fontSize:scale(12)
     },
     vendorDetails: {
         marginHorizontal: scale(15),
@@ -72,6 +77,65 @@ const styles = StyleSheet.create({
         marginTop: scale(30),
         marginBottom: scale(20)
     },
-    
+    placeView: {
+        borderRadius: scale(16),
+        marginHorizontal: scale(5),
+        height: scale(130),
+        flexDirection: "row",
+        backgroundColor: colors.solidWhite,
+        marginBottom: scale(20)
+    },
+    placeImage: {
+        width: scale(130),
+        height: scale(130),
+        borderBottomLeftRadius: scale(16),
+        borderTopLeftRadius: scale(16),
+        resizeMode: "stretch"
+    },
+    placeBaseView: {
+        alignSelf: "center",
+        marginStart: scale(15),
+        flexDirection: "column"
+    },
+    placeName: {
+        color: colors.solidBlack,
+        fontWeight: "bold",
+        width: scale(150),
+        fontSize: scale(15)
+    },
+    placeLocation: {
+        marginTop: scale(5),
+        width: scale(150),
+        color: colors.solidBlack,
+        fontWeight: "400",
+        fontSize: scale(10)
+    },
+    placeSelectView: {
+        flexDirection: "row",
+        marginTop: scale(20)
+    },
+    placeButtonView: {
+        width: moderateScale(100),
+        borderRadius: 30,
+        padding: scale(10),
+        shadowColor: colors.solidRed,
+        shadowRadius: scale(1),
+        elevation: scale(2),
+        borderWidth: scale(0.2),
+        justifyContent: "center",
+        alignItems: "center",
+        padding: scale(10)
+    },
+    placeButtonTextView: {
+        fontSize: scale(13),
+        fontWeight: "500",
+        color: colors.solidWhite
+    },
+    placeFavorite: {
+        width: scale(30),
+        height: scale(30),
+        resizeMode: "stretch",
+        marginLeft: scale(20)
+    }
 })
 export default styles

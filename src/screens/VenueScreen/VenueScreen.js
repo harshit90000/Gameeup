@@ -5,14 +5,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import colors from '../../assets/colors/colors';
 import styles from './styles';
 import { images } from '../../constants/imagePath';
+import navigationStrings from '../../constants/navigationStrings';
 
-const VenueScreen = ({ route }) => {
+const VenueScreen = ({ route,navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const { height, width } = Dimensions.get('window')
   const [CurrentIndex, setCurrentIndex] = useState(0)
   const product = useSelector(state => state.productReduce.data.products)
   const id = route.params.courseId;
-  console.log(id);
+  // console.log(id);
   const DataManage = product.find((element) => {
     return id === element.id;
   });
@@ -33,6 +34,8 @@ const VenueScreen = ({ route }) => {
         <ScrollView
           pagingEnabled={true}
           horizontal
+          bounces={false}
+          scrollEventThrottle={16}
           style={styles.scrollViewDesign}
           nestedScrollEnabled={true}
           onScroll={e => {
@@ -56,7 +59,7 @@ const VenueScreen = ({ route }) => {
           }
         </View>
         <View style={styles.carouselView}>
-          <TouchableOpacity style={styles.rightArrowView}>
+          <TouchableOpacity style={styles.rightArrowView} onPress={()=>navigation.replace(navigationStrings.HOME_SCREEN)}>
             <Image source={images.iconLeftArrow} style={styles.rightIcon} />
           </TouchableOpacity>
 

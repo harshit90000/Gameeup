@@ -14,7 +14,7 @@ const BottomStack = () => {
             screenOptions={{
                 tabBarStyle: {
                     backgroundColor:colors.lightWhite,
-                    height:"12%"},
+                    height:scale(100)},
             }}>
             <Tab.Screen
                 name={navigationStrings.HOME_SCREEN}

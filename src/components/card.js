@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         height: moderateVerticalScale(130),
         flexDirection: "row",
         backgroundColor: colors.solidWhite,
-        marginBottom: scale(8)
+        marginBottom: scale(20)
     },
     placeImage: {
         width: scale(130),
