@@ -1,12 +1,9 @@
 import { configureStore } from  "@reduxjs/toolkit"
 import logger from "redux-logger";
 import ApiReducer from './ApiReducer'
-import ProductReducer from "./ProductReducer";
-
 const store = configureStore({
     reducer:{
-        productReduce : ApiReducer,
-        apiReducer : ProductReducer
+        productReduce : ApiReducer
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger)
 

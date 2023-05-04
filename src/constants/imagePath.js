@@ -125,6 +125,7 @@ import iconShare from  '../assets/images/homeScreen/share.png'
 import my8ballPool from  '../assets/images/homeScreen/8ballPool.png'
 import mySnookerBilliard from  '../assets/images/homeScreen/snookerBilliard.png'
 import myStickBalls from  '../assets/images/homeScreen/stickBalls.png'
+import remove from  '../assets/images/homeScreen/remove.png'
 //menu
 import menuBooking from  '../assets/images/menu/booking.png'
 import menuProfile from  '../assets/images/menu/myProfile.png'
@@ -187,4 +188,5 @@ export const images ={backgroundImage,
     splashFullLogo,
     splashStick,
     LogoGame,
+    remove
 }

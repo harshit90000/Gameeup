@@ -146,7 +146,7 @@ const MyProfile = () => {
           { text: 'Cancel', onPress: () => (console.log('Cancel Pressed')) },
           {
             text: 'OK', onPress: () => {
-              navigation.replace(navigationStrings.HOME_SCREEN) 
+              navigation.navigate(navigationStrings.HOME_SCREEN) 
             }
           }
         ])
@@ -240,7 +240,7 @@ const MyProfile = () => {
         <Text style={styles.dobDate}>{chooseDate}</Text>
       </TouchableOpacity>
       <Modal
-        animationType="fade"
+        animationType="slide"
         transparent={false}
         visible={isModelVisible}
         onRequestClose={() => changeModel(false)}>

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     textInputView: {
         fontSize: scale(13),
         width: scale(230),
-        height: scale(35),
+        height: scale(40),
         marginLeft: scale(10)
     },
     nextButton: {

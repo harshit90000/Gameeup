@@ -5,8 +5,6 @@ import colors from '../assets/colors/colors'
 
 const ModalPicker = (props) => {
     const Options = ["Male", "Female", "Other"]
-    const width = Dimensions.get('window').width
-    const height = Dimensions.get("window").height
     const onPressItem = (option) => {
         props.changeModel(false)
         props.setData(option)
@@ -23,9 +21,7 @@ const ModalPicker = (props) => {
     })
     return (
         <TouchableOpacity style={styles.container} onPress={() => { props.changeModel(false) }}>
-            <View style={[styles.model,
-                //  { width: width - 20, height: height/4.5  }
-                 ]}>
+            <View style={styles.model}>
                 <ScrollView>
                     {options}
                 </ScrollView>
@@ -36,17 +32,24 @@ const ModalPicker = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
     },
     model: {
-        backgroundColor: "black",
-        borderRadius: scale(20),
-        width:scale(300),
-        height:scale(150)
+        backgroundColor:colors.skyBlue,
+        maxHeight:Dimensions.get('window').height * 0.4,
+        height:Dimensions.get('window').height * 0.3,
+        bottom:0,
+        width:"100%",
+        alignItems:"center",
+        alignContent:"center",
+        position:"absolute",
+        bottom:0,
+        borderTopEndRadius:scale(20),
+        borderTopStartRadius:scale(20)
     },
     options:{
-        alignItems:"flex-start"
+        // alignItems:"flex-start"
+        bottom:scale(0),
+        width:"100%"
     },
     text:{
         fontSize:scale(20),

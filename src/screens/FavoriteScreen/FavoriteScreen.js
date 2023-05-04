@@ -1,11 +1,10 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
+import React, { useEffect, useState } from 'react'
 
 const FavoriteScreen = () => {
+ 
   return (
-    <View>
-      <Text>FavouriteScreen</Text>
-    </View>
+     <Text>SSR</Text>
   )
 }
 

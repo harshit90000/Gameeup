@@ -21,5 +21,6 @@ export default {
     lightGrey: "#D9D9D9",
     solidBlue: "#243D93",
     darkBlue: "#000D81",
-    solidRed: "#ff0000"
+    solidRed: "#ff0000",
+    soliPurple:"#1F3648"
 }

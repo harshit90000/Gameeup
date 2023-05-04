@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         padding:scale(10),    
     },
     box:{
-        height: scale(40),
+        height: scale(50),
         width: scale(40),
         borderRadius: scale(10),
         justifyContent: "center",

@@ -1,21 +1,17 @@
-import {  StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../assets/colors/colors";
 import { scale } from "react-native-size-matters";
 
 const styles = StyleSheet.create({
     scrollViewDesign:{
-        width: scale(350),
+        marginBottom:scale(15),
+        flex:1
     },
     photoView: {
         width: scale(350),
         height: scale(200),
+        marginTop: scale(20),
         resizeMode: "stretch",
-        borderBottomEndRadius:scale(30),
-        borderBottomStartRadius:scale(30)
-    },
-    carouselView:{
-        flexDirection:"row",
-        
     },
     rightIcon: {
         height: scale(20),
@@ -27,38 +23,19 @@ const styles = StyleSheet.create({
         borderRadius: scale(20),
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.solidWhite
-    },
-    carouselView:{
-        flexDirection:"row"
-    },
-    modelImageZoom:{
-        marginTop:20
-    },
-    modelSliderView: {
-        width: "80%",
-        height: "70%",
-        resizeMode: "stretch",
-        marginHorizontal:10,
-        alignSelf:"center"
-    },
-    modelSmallSliderView: {
-        alignSelf: "center",
-    },
-    mainView: {
         backgroundColor: colors.solidWhite,
-        height: "100%"
+        marginStart: scale(10)
     },
-    scrollImage: {
-        alignSelf: "center",
-        marginTop: "5%",
-        width: "100%",
-        // marginVertical:"10%"
+    carouselView: {
+        flexDirection: "row",
+        marginEnd: scale(20),
+        justifyContent: "space-between",
+        marginTop:scale(-180)
     },
     dotSliderView: {
         flexDirection: "row",
         alignSelf: "center",
-        marginTop: scale(-20)
+        marginTop:scale(-20)
     },
     dotSlider: {
         width: scale(12),
@@ -66,68 +43,129 @@ const styles = StyleSheet.create({
         borderRadius: scale(10),
         marginLeft: scale(5),
     },
-    dataview : {
-        width: "100%",
-        height: "100%",
-        marginLeft: "5%",
-        marginBottom: "10%"
+    baseView:{
+        marginTop:scale(180),
+        marginStart:scale(20)
     },
-    baseView: {
-        flexDirection: "row",
-        marginVertical: "2%",
+    placeName:{
+        fontWeight:"bold",
+        fontSize:scale(30),
+        color:colors.solidBlack,
+        width:scale(300),
     },
-    mainText: {
-        fontSize: 16,
-        fontWeight: "700",
-        width: "30%",
-        color: colors.solidBlack
+    placeAddressView:{
+        flexDirection:"row",
+        marginTop:scale(20),
     },
-    columText: {
-        fontSize: 16,
-        fontWeight: "700",
-        width: "2%",
-        marginHorizontal: "1%",
-        color: colors.solidBlack
+    placeTimeView:{
+        flexDirection:"row",
+        alignItems:"center",
+        marginTop:scale(20),
     },
-    viewText: {
-        fontSize: 16,
-        fontWeight: "500",
-        color: colors.solidBlack
+    placeAddress:{
+        fontSize:scale(14),
+        color:colors.solidBlack,
+        fontWeight:"500",
+        marginStart:scale(15),
+        width:scale(150)
     },
-    viewSymbol:{
-        fontSize: 16,
-        fontWeight: "500",
-        color: colors.solidRed,
+    placeTime:{
+        fontSize:scale(14),
+        color:colors.solidBlack,
+        fontWeight:"500",
+        marginStart:scale(15),
     },
-    viewDes: {
-        fontSize: 16,
-        fontWeight: "500",
-        color: colors.solidBlack,
-        width: "50%"
+    placeTimePM:{
+        fontSize:scale(14),
+        color:colors.solidBlack,
+        fontWeight:"500",
+        marginStart:scale(5),
     },
-    ratingStyle:{
-        marginTop:"2%"
+    placeTimeArrow:{
+        fontSize:scale(14),
+        color:colors.solidBlack,
+        fontWeight:"500",
+        marginStart:scale(5),
     },
-    crossImage: {
-        height: 20,
-        width: 20,
-        marginVertical: "5%",
-        marginLeft: "1%"
+    placeGoogleMapView:{
+        height: scale(40),
+        width: scale(140),
+        borderRadius: scale(20),
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection:"row",
+        backgroundColor: colors.skyBlue,
+        marginStart: scale(50),
+        marginTop:scale(20)
     },
-    modelScrollImageView: {
-        alignSelf: "center",
-        width: "100%",
+    placeGoogleImageView:{
+        height: scale(20),
+        width: scale(20),
+        borderRadius: scale(5),
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.solidWhite
     },
-    imageSmallSliderView: {
-        flexDirection: "row",
-        marginBottom: "10%"
+    placeGoogleMapText:{
+        fontSize:scale(15),
+        color:colors.solidWhite,
+        fontWeight:"400",
+        marginStart:scale(5),
     },
-    crossImageModel: {
-        height: 20,
-        width: 20,
-        marginTop: "15%",
-        marginBottom: "10%",
-        marginLeft: "1%"
+    availableGame:{
+        marginStart:scale(20),
+        color:colors.solidBlack,
+        fontSize:scale(15),
+        fontWeight:"900",
+        marginBottom:scale(20)
+     },
+    showingGameView:{
+        flexDirection:"row",
+        marginBottom:scale(20),
+        flexWrap:1,
+        justifyContent:"space-evenly"
+    },
+    showingGameBaseView:{
+        backgroundColor:colors.skyBlue,
+        height:scale(130),
+        width:scale(120),
+        justifyContent:"space-between",
+        borderRadius:scale(20),
+        marginBottom:scale(20),
+    },
+    gameImageView:{
+        marginTop:scale(10),
+        alignSelf:"center",
+        height:scale(70),
+        width:scale(70),
+        resizeMode:"stretch"
+    },
+    textViewGame:{
+        width:scale(120),
+        alignItems:"center",
+        justifyContent:"center",
+        height:scale(40),
+        borderBottomStartRadius:scale(20),
+        borderBottomEndRadius:scale(20),
+        backgroundColor:colors.soliPurple
+    },
+    gameNameText:{
+        color:colors.solidWhite,
+        fontSize:scale(20),
+        fontWeight:"800",
+    },
+    model: {
+        backgroundColor:colors.skyBlue,
+        maxHeight:Dimensions.get('window').height * 0.4,
+        height:Dimensions.get('window').height * 0.3,
+        bottom:0,
+        width:"100%",
+        alignItems:"center",
+        alignContent:"center",
+        position:"absolute",
+        bottom:0,
+        borderTopEndRadius:scale(20),
+        borderTopStartRadius:scale(20)
     },
 })
 export default styles
