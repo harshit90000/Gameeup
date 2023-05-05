@@ -11,12 +11,15 @@ import { images } from '../constants/imagePath';
 const Stack = createNativeStackNavigator();
 export default function AuthStack({ navigation }) {
     return (
+
         <Stack.Navigator screenOptions={{ headerShown: true }}>
-          
-            <Stack.Screen name={navigationStrings.ONBOARDING} component={OnBoarding} options={{ headerShown: false }} />
+      <Stack.Screen name={navigationStrings.ONBOARDING} component={OnBoarding} options={{ headerShown: false }} />
             <Stack.Screen name={navigationStrings.SIGNUP_EMAIL} component={SignupEmail} options={{ headerShown: false }} />
             <Stack.Screen name={navigationStrings.SIGNUP_OTP} component={SignupOTP} options={{ headerShown: false }} />
             <Stack.Screen name={navigationStrings.SPLASH_SCREEN} component={SplashScreen} options={{ headerShown: false }} />
+      
+            <Stack.Screen name={navigationStrings.HOME_SCREEN} component={BottomStack} options={{ headerShown: false }} />
+
             <Stack.Screen name={navigationStrings.VENUE_SCREEN} component={VenueScreen}
                 options={{
                     headerShown: false,
@@ -24,10 +27,10 @@ export default function AuthStack({ navigation }) {
                     headerTintColor: colors.borderColor,
                     headerTitleStyle: { fontSize: scale(16) }
                 }} />
-            <Stack.Screen name={navigationStrings.GAME_SCREEN} 
-            component={GameScreen}
+            <Stack.Screen name={navigationStrings.GAME_SCREEN}
+                component={GameScreen}
                 options={{
-                    headerShown:false,
+                    headerShown: false,
                     headerTitle: "GameScreen",
                     headerTintColor: colors.borderColor,
                     headerTitleStyle: { fontSize: scale(16) }
@@ -65,13 +68,12 @@ export default function AuthStack({ navigation }) {
                     headerTintColor: colors.borderColor,
                     headerTitleStyle: { fontSize: scale(16) }
                 }} />
-                 <Stack.Screen name={navigationStrings.MY_PROFILE} component={MyProfile}
+            <Stack.Screen name={navigationStrings.MY_PROFILE} component={MyProfile}
                 options={{
-                    headerTitle: "TermsScreen",
+                    headerTitle: "MyProfile",
                     headerTintColor: colors.borderColor,
                     headerTitleStyle: { fontSize: scale(16) }
                 }} />
-                            <Stack.Screen name={navigationStrings.HOME_SCREEN} component={BottomStack} options={{ headerShown: false }} />
 
         </Stack.Navigator>
     )

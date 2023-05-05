@@ -3,7 +3,7 @@ import logger from "redux-logger";
 import ApiReducer from './ApiReducer'
 const store = configureStore({
     reducer:{
-        productReduce : ApiReducer
+        productReduce : ApiReducer,
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger)
 

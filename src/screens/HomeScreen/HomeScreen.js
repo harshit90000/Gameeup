@@ -6,7 +6,7 @@ import styles from './styles'
 import { images } from '../../constants/imagePath'
 import Card from '../../components/card'
 import { useDispatch, useSelector } from 'react-redux'
-import { addProduct, myAxiosData } from '../../redux/ApiReducer'
+import { addProduct, myAxiosData } from '../../reduxs/ApiReducer'
 import navigationStrings from '../../constants/navigationStrings'
 import { scale } from 'react-native-size-matters'
 import Geolocation from '@react-native-community/geolocation';
@@ -21,43 +21,25 @@ const HomeScreen = ({ navigation }) => {
   useEffect(() => {
     const loadData = async () => {
       dispatch(myAxiosData())
-      dispatch(addProduct)
       await new Promise((r) => setTimeout(r, 100))
     };
-    // Geolocation.getCurrentPosition(
-    //   position => {
-    //     setLatitude(position.coords.latitude)
-    //     setLongitude(position.coords.longitude)
-    //     fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=ecc9a67e21da9a51b30da4ff717b9e73`)
-    //       .then(response => response.json())
-    //       .then(json => {
-    //         const address_components = json.results[0];
-    //         const country = address_components.find(component => component.types.includes('country')).long_name;
-    //         const state = address_components.find(component => component.types.includes('administrative_area_level_1')).long_name;
-    //         const city = address_components.find(component => component.types.includes('locality')).long_name;
-    //         const pin = address_components.find(component => component.types.includes('postal_code')).long_name;
-    //         const address = json.results[0].formatted_address;
-
-    //         SetData('Country:', country);
-    //         console.log('State:', state);
-    //         console.log('City:', city);
-    //         console.log('PIN:', pin);
-    //         console.log('Address:', address);
-    //       }).catch(e => {
-    //         console.log("*/*/*/", e)
-    //         return e;
-    //       });
-    //   },
-    //   error => console.log(error),
-    //   { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
-    // );
+    Geolocation.getCurrentPosition(
+      position => {
+        setLatitude(position.coords.latitude)
+        setLongitude(position.coords.longitude)
+      },
+      error => console.log(error),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+    );
     loadData();
-
   }, []);
   const [seletedvalue, setselectValue] = useState(input)
   const [imageFavourite, setImageFavourite] = useState(true)
+
   const addItem = (item) => {
-    dispatch(addProduct({item}))
+    dispatch(addProduct({ item }))
+    // setImageFavourite(previousState => !previousState)
+    console.log("/*/-*/-", dispatch(addProduct({ item })));
   }
   const inputField = ({ item }) => {
     if (seletedvalue == "") {
@@ -157,6 +139,7 @@ const HomeScreen = ({ navigation }) => {
             renderItem={inputField}
           />
         </View>
+
       </View>
     </LinearGradient>
   )

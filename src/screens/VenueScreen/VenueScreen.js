@@ -13,8 +13,9 @@ const VenueScreen = ({ route, navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [CurrentIndex, setCurrentIndex] = useState(0)
   const product = useSelector(state => state.productReduce.data.products)
-  const id = route.params.courseId;
-  // console.log(id);
+  console.log(product);
+  const id = route.params?.courseId;
+  console.log(id);
   const DataManage = product.find((element) => {
     return id === element.id;
   });

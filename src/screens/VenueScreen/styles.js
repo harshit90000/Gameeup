@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     showingGameView:{
         flexDirection:"row",
         marginBottom:scale(20),
-        flexWrap:1,
+        flexWrap:"wrap",
         justifyContent:"space-evenly"
     },
     showingGameBaseView:{

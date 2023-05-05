@@ -13,7 +13,7 @@ export const myAxiosData = createAsyncThunk("users", async () => {
 export const addProduct = createAsyncThunk(
     'products/addProduct',
     async (product) => {
-        const response = await fetch('https://dummyjson.com/products', {
+        const response = await fetch(`https://dummyjson.com/products/${product}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -24,7 +24,6 @@ export const addProduct = createAsyncThunk(
         return data;
     }
 );
-
 export const deleteProduct = createAsyncThunk(
     'products/deleteProduct',
     async (productId) => {
@@ -35,7 +34,6 @@ export const deleteProduct = createAsyncThunk(
         return data;
     }
 );
-
 const apiSlicer = createSlice({
     name: "sssr",
     initialState,
@@ -53,10 +51,18 @@ const apiSlicer = createSlice({
                 state.error = "Data is wrong"
         })
         builder.addCase(addProduct.fulfilled, (state, action) => {
-            state.products.push(action.payload);
+                state.push({
+                    "id": action.payload.id,
+                    "brand": action.payload.brand,
+                    "category": action.payload.category,
+                    "description": action.payload.description,
+                    "image": action.payload.image,
+                    "price": action.payload.price,
+                    "title": action.payload.title
+                });
         })
         builder.addCase(deleteProduct.fulfilled, (state, action) => {
-            state.products = state.products.filter((product) => product.id !== action.payload.id);
+            return (state = state.filter(item => item.id !== action.payload));
         });
     }
 })

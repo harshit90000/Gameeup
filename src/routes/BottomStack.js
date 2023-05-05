@@ -14,7 +14,8 @@ const BottomStack = () => {
             screenOptions={{
                 tabBarStyle: {
                     backgroundColor:colors.lightWhite,
-                    height:scale(100)},
+                    height:scale(60),
+                alignItems:"center"},
             }}>
             <Tab.Screen
                 name={navigationStrings.HOME_SCREEN}
@@ -29,9 +30,8 @@ const BottomStack = () => {
                         <Text
                             style={[styles.bottomText, {
                                 color: focused ? colors.borderColor : color,
-                                fontSize: focused ?  scale(13) : scale(10),
-                                marginBottom: focused ? scale(4) : scale(5)
-
+                                // fontSize: focused ?  scale(10) : scale(8),
+                                // marginBottom: focused ? scale(0) : scale(5)
                             }]}>Home</Text>
                     ),
                     tabBarIcon: ({ focused, color, size }) => {
@@ -40,8 +40,8 @@ const BottomStack = () => {
                                 source={images.bottomHome}
                                 style={[styles.bottomImage, {
                                     tintColor: focused ? colors.borderColor : color,
-                                    height: focused ? scale(30) : scale(25),
-                                    width: focused ? scale(30) : scale(25)
+                                    // height: focused ? scale(20) : scale(15),
+                                    // width: focused ? scale(20) : scale(15)
                                 }]} />
                         )
                     }
@@ -58,8 +58,8 @@ const BottomStack = () => {
                         <Text
                             style={[styles.bottomText, {
                                 color: focused ? colors.borderColor : color,
-                                fontSize: focused ?  scale(13) : scale(10),
-                                marginBottom: focused ? scale(4) : scale(5)
+                                // fontSize: focused ?  scale(13) : scale(10),
+                                // marginBottom: focused ? scale(4) : scale(5)
                             }]}>Favorite</Text>
                     ),
                     tabBarIcon: ({ focused, color, size }) => {
@@ -68,14 +68,14 @@ const BottomStack = () => {
                                 source={images.bottomHeart}
                                 style={[styles.bottomImage, {
                                     tintColor: focused ? colors.borderColor : color,
-                                    height: focused ? scale(30) : scale(25),
-                                    width: focused ? scale(30) : scale(25)
+                                    // height: focused ? scale(30) : scale(25),
+                                    // width: focused ? scale(30) : scale(25)
                                 }]} />
                         )
                     }
                 }}
             />
-            <Tab.Screen
+            {/* <Tab.Screen
                 name={navigationStrings.LIVE_SCORE}
                 component={LiveScore}
                 options={{
@@ -102,7 +102,7 @@ const BottomStack = () => {
                                 }]} />
                         )
                     }
-                }} />
+                }} /> */}
             <Tab.Screen
                 name={navigationStrings.SCORE_BOARD}
                 component={ScoreBoard}
@@ -115,8 +115,8 @@ const BottomStack = () => {
                         <Text
                             style={[styles.bottomText, {
                                 color: focused ? colors.borderColor : color,
-                                fontSize: focused ?  scale(11) : scale(10),
-                                marginBottom: focused ? scale(4) : scale(5)
+                                // fontSize: focused ?  scale(11) : scale(10),
+                                // marginBottom: focused ? scale(4) : scale(5)
                             }]}>ScoreBoard</Text>
                     ),
                     tabBarIcon: ({ focused, color, size }) => {
@@ -125,8 +125,8 @@ const BottomStack = () => {
                                 source={images.bottomScoreboard}
                                 style={[styles.bottomImage, {
                                     tintColor: focused ? colors.borderColor : color,
-                                    height: focused ? scale(30) : scale(25),
-                                    width: focused ?scale(30) : scale(25),
+                                    // height: focused ? scale(30) : scale(25),
+                                    // width: focused ?scale(30) : scale(25),
                                 }]} />
                         )
                     }
@@ -143,8 +143,8 @@ const BottomStack = () => {
                         <Text
                             style={[styles.bottomText, {
                                 color: focused ? colors.borderColor : color,
-                                fontSize: focused ? scale(13) : scale(10),
-                                marginBottom: focused ? scale(4) : scale(6)
+                                // fontSize: focused ? scale(13) : scale(10),
+                                // marginBottom: focused ? scale(4) : scale(6)
                             }]}>Menu</Text>
                     ),
                     tabBarIcon: ({ focused, color, size }) => {
@@ -153,8 +153,8 @@ const BottomStack = () => {
                                 source={images.bottomMenu}
                                 style={[styles.bottomImage, {
                                     tintColor: focused ? colors.borderColor : color,
-                                    height: focused ? scale(30) : scale(25),
-                                    width: focused ? scale(30) : scale(25),
+                                    height: focused ? scale(20) : scale(20),
+                                    width: focused ? scale(20) : scale(20),
                                 }]} />
                         )
                     }
